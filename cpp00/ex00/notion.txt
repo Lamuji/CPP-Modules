@@ -1,0 +1,78 @@
+Namespace :
+Regrouper symboles/fonctions dans un "sac"
+comme une structure, sauf qu4il peut y avoir les memes noms de fonctions ou de variable definie
+dans chaque namespace d'un programme, en ayant des valeurs assignees qui nont rien a voir
+
+stdio stream :
+
+std::(namespace qui fait office de lib standard en qq sorte)
+std::cout : permet d'afficher sur la sortie std
+std::cin : permet de lire sur l'entree
+>> ou << : sert a rediriger selon cout ou cin
+
+ex :
+	int main (void)
+	{
+	char buf[100];
+
+	std::cout << "ecrit ici :";
+	std::cin >> buf;
+	std::cout << "tas ecrit ca : " << buf << "" << std::endl;
+	}
+
+
+CLASS ET INSTANCE :
+
+se declare dans son fichier hpp avec ses fonctions, et dans le cpp on defini des fonctions qui sont dans les class
+en utilisant la meme syntaxe que les namespace::
+Lorsque class est instanciee, le constructeur(sample()) est appele, lorsque la class va etre detruite, la fonction de destruction
+(~sample()) sera appelée
+
+
+LISTE D'INITIIALISATION :
+
+exemple :
+
+--------------- declaration class HPP ----------
+class Sample
+{
+
+public:
+	Sample(char p1, int p2, float p3); // constructeur
+	~Sample(void); // destructeur
+
+	char	a1;
+	int		a2;
+	float	a3;
+	void	yo(void);
+};
+
+------------ definition viariable selon les parametre de fonction sample
+Sample::Sample(char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3)
+{
+	std::cout << "constructeur called" << std::endl;
+	std::cout << "a1 = " << this->a1 << std::endl;
+	std::cout << "a2 = " << this->a2 << std::endl;
+	std::cout << "a3 = " << this->a3 << std::endl;
+
+	return; // pas oblige
+}
+
+fonction declare et defini avec le mot CONST :
+Signifie  qu'une fonction membre d'une class defini et declare avec le mot const
+ne pourra jamais modifier un attribut (this->"") de l'instance actuelle
+faut tjrs essayer de faire des const
+
+VISIBILITY :  PUBLIC 
+bizarre, tout ce que tu fous sur private ne pourra pas etre utilisé
+par qqun qui manipule ton code
+
+
+struct et class : 
+la diff est une struct a un scop en public par defaut, alors quune classe a une
+scope private par defaut
+
+ACCESSORS :
+
+Quand on a des attributs privé, on peut utiliser des accessors pour qd meme modifier des attributs private
+
