@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:57:11 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/05/31 20:29:31 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/04 14:48:43 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 # define PHONEBOOK_CLASS_H
 
 #include "Contact.class.hpp"
+#include <string>
 
 class PhoneBook {
 
 public:
-	char command[10];
+	Contact contact[8];
+
 	PhoneBook(void);
 	~PhoneBook(void);
-	//Contact contact;
-	void add(void);
-	void search();
+
+	std::string command[6];
+
+	void add(int id);
+	void search(int id);
 	int exit();
 private:
 };
