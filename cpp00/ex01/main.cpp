@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:50:40 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/04 14:52:35 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/04 21:01:05 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,24 @@ int	main(void)
 {
 	PhoneBook repertoire;
 	string command;
-	int	id = 1;
-
-	while (id < 9)
+	int	id = 0;
+	cout<<"------//PHONEBOOK//------"<<endl;
+	cout<<"[Type command 'ADD' to add new contact]"<<endl;
+	cout<<"[Type command 'SEARCH' to display contact list]"<<endl;
+	cout<<"[Type command 'EXIT' to quit Phonebook]"<<endl;
+	while (1)
 	{
-		cin >> command;
-		if (!command.compare("ADD"))
+		cin>>command;
+		if (id == 8)
+			id--;
+		if (!command.compare("ADD")){
 			repertoire.add(id);
+			id++;
+		}
 		else if (!command.compare("SEARCH"))
 			repertoire.search(id);
 		else if (!command.compare("EXIT"))
 			repertoire.exit();
-		id++;
 	}
 	return 0;
 }

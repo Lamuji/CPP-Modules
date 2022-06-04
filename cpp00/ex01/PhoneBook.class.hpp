@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:57:11 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/04 14:48:43 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/04 20:32:38 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "Contact.class.hpp"
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 class PhoneBook {
 

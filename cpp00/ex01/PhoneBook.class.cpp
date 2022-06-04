@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:01:07 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/04 15:02:10 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/04 21:49:38 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.class.hpp"
-#include <iostream>
-#include <string>
 
 PhoneBook::PhoneBook(void){}
 PhoneBook::~PhoneBook(void){}
@@ -25,47 +23,55 @@ void	PhoneBook::add(int id)
 	string number;
 	string darksecret;
 
-	cout << "To add a new contact ->" << endl;
-	cout << "First name : ";
-	cin >> firstname;
+	cout<<"First name : ";
+	cin>>firstname;
 	contact[id].setFirstName(firstname);
 
-	cout << "Last name : ";
-	cin >> lastname;
-	//cout << endl;
+	cout<<"Last name : ";
+	cin>>lastname;
 	contact[id].setLastName(lastname);
 
-	cout << "Nickname : ";
-	cin >> nickname;
-	//cout << endl;
+	cout<<"Nickname : ";
+	cin>>nickname;
 	contact[id].setNickName(nickname);
 
-	cout << "Number : ";
-	cin >> number;
-	//cout << endl;
+	cout<<"Number : ";
+	cin>>number;
 	contact[id].setNumber(number);
 
-	cout << "Dark secret : ";
-	cin >> darksecret;
-	//cout << endl;
+	cout<<"Dark secret : ";
+	cin>>darksecret;
 	contact[id].setDarkSecret(darksecret);
 
+	cout<<"[New contact saved.]"<<endl<<endl;
 }
 
-void	PhoneBook::search(int id){
+void	PhoneBook::search(int id)
+{
 	int i = 0;
-	while (i++ < id){
-		cout << contact[i].getFirstName();
-		cout << "|" << endl;
-		cout << contact[i].getLastName();
-		cout << "|" << endl;
-		cout << contact[i].getNickName();
-		cout << "|" << endl;
-		cout << contact[i].getNumber();
-		cout << "|" << endl;
-		cout << contact[i].getDarkSecret();
+	int	num;
+	while (i < id)
+	{
+		cout<<setfill(' ')<<setw(10)<<i<<"|";
+		cout<<setfill(' ')<<setw(10)<<contact[i].getFirstName()<<"|";
+		cout<<setfill(' ')<<setw(10)<<contact[i].getLastName()<<"|";
+		cout<<setfill(' ')<<setw(10)<<contact[i].getNickName()<<"|"<<endl;
+		i++;
 	}
-
+	cout<<"[Which contact do you want to get infos ?]"<<endl<<"[Please enter its ID.]"<<endl<<endl;
+	if(!(cin>>num))
+		return ;
+	if (num >= 0 && num < id){
+		cout<<contact[num].getFirstName()<<endl;
+		cout<<contact[num].getLastName()<<endl;
+		cout<<contact[num].getNickName()<<endl;
+		cout<<contact[num].getNumber()<<endl;
+		cout<<contact[num].getDarkSecret()<<endl<<endl;
+	}
+	else {
+		cout<<"Wrong format, or unexistant id"<<endl;
+		//PhoneBook::search(id);
+	}
 }
 
 int	PhoneBook::exit(void)
