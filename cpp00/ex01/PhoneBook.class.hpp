@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:57:11 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/04 20:32:38 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/05 19:00:27 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
 	void search(int id);
 	int exit();
 private:
+
 };
 
 #endif

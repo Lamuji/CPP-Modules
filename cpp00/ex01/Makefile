@@ -16,10 +16,10 @@ OBJ = $(SRC:%.cpp=%.o)
 all : $(NAME)
 
 $(NAME) : $(SRC)
-	$(CC) $(FLAGS) -o $(NAME) $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 fclean : 
 	rm -rf $(NAME)
 
-re :
-	fclean all
+re : fclean
+	make all
