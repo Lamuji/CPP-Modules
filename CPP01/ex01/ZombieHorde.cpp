@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.class.h                                     :+:      :+:    :+:   */
+/*   zombiehorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:05:06 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/06 19:22:27 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/07 00:46:46 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/07 01:37:58 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_H
-# define ZOMBIE_CLASS_H
+#include "Zombie.h"
 
-#include <iostream>
-#include <string>
-
-class Zombie {
-	
-private : 
-
-	std::string _name;
-	
-public :
-	Zombie(std::string = "default");
-	~Zombie();
-
-	std::string	getName() const;
-	Zombie* newZombie(std::string name);
-	void	ramdomChump(std:: string name);
-	void	announce();
-};
-
-
-#endif
+Zombie*	zombieHorde(int N, std::string name)
+{
+	Zombie*	Zomb = new Zombie[N];
+	while (N > 0){
+		Zomb[N] = Zombie(name);
+		//Zomb[N].announce();
+		N--;
+	}
+	return Zomb;
+}
