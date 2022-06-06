@@ -76,3 +76,23 @@ ACCESSORS :
 
 Quand on a des attributs privé, on peut utiliser des accessors pour qd meme modifier des attributs private
 
+
+
+New et delete : 
+
+New (objet dune classe)
+
+delete (objet dune classe)
+
+student* new student[42] = 42 * objet student alloue
+
+
+Les REFERENCES
+
+int nbdeball = 42;
+
+int* balls = &nbdeball -> on connait, pointeur qui pointe sur une adresse
+int& ballss = nbdeball -> une reference qui pointe sur une variable,
+et qui devrai toujours etre initialiser pour pointer sur qque chose
+dexistant.
+Si on modifie balls, cela mofifiera aussi ce sur quoi il pointe
