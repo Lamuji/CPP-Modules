@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 00:38:22 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/07 00:50:50 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/07 01:48:58 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ Zombie::~Zombie(void){
 
 void	Zombie::announce(void){
 	std::cout<<_name<<": BraiiiiiiinnnzzzZ..."<<std::endl;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
 }

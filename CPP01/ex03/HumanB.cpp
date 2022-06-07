@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:05:06 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/07 14:35:29 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/07 16:44:37 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/07 19:35:14 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include "HumanB.h"
 
-#include <iostream>
-#include <string>
 
-class Zombie {
+HumanB::HumanB(std::string name) : _name(name){}
 
-private : 
-	std::string _name;
-public :
-	Zombie(std::string = "default");
-	~Zombie();
+HumanB::~HumanB(){}
 
-	void	announce();
-};
+void	HumanB::setWeap(Weapon &weap)
+{
+	_weap = &weap;
+}
 
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
-
-#endif
+void	HumanB::attack(void)
+{
+	if (_weap)
+		std::cout<<_name<<" attacks with "<<(*_weap).getType()<<std::endl;
+	else
+		std::cout<<_name<<" has no weapon!"<<std::endl;
+}

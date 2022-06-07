@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Weapon.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:05:06 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/07 14:35:29 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/07 15:05:58 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/07 19:14:25 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef WEAPON_H
+# define WEAPON_H
 
 #include <iostream>
 #include <string>
+//#include "HumanB.h"
 
-class Zombie {
 
-private : 
-	std::string _name;
-public :
-	Zombie(std::string = "default");
-	~Zombie();
+class Weapon
+{
+private:
+	std::string _type;
+public:
+	Weapon(std::string type = "some other type of club");
+	~Weapon();
+	
+	std::string const &	getType(void) const;
+	void			setType(std::string type);
 
-	void	announce();
 };
-
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
 
 #endif

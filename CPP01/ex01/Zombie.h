@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 00:10:36 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/07 00:48:38 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/07 01:47:29 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 	~Zombie();
 
 	void announce();
+	void setName(std::string _name);
 };
 
 Zombie*	zombieHorde(int N, std::string name);

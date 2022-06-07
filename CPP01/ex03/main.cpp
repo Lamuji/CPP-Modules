@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombiehorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 00:46:46 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/07 14:40:19 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/07 16:30:09 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/07 19:34:26 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Weapon.h"
+#include "HumanA.h"
+#include "HumanB.h"
 
-Zombie*	zombieHorde(int N, std::string name)
+int main()
 {
-	Zombie*	Zomb = new Zombie[N];
-	while (N > 0){
-		//Zomb[N].setName(name);
-		Zomb[N] = Zombie(name);
-		//Zomb[N].announce();
-		N--;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	return Zomb;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+	//	jim.setWeap(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }
