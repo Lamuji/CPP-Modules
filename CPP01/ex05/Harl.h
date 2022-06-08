@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.h                                           :+:      :+:    :+:   */
+/*   Harl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 15:37:56 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/08 11:42:41 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/08 19:12:09 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/08 19:13:26 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_H
-# define HUMANB_H
+#ifndef HARL_H
+# define HARL_H
 
 #include <iostream>
 #include <string>
-#include "Weapon.h"
 
-class HumanB
+class Harl
 {
 private:
-	std::string _name;
-	Weapon *_weap;
+	void debug();
+	void info();
+	void warning();
+	void error();
 public:
-	HumanB(std::string name);
-	~HumanB();
-	void setWeap(Weapon &weap);
-	void	attack();
+	Harl(/* args */);
+	~Harl();
+
+	void complain(std::string level);
 };
 
 #endif
