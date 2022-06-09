@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 19:12:09 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/08 19:13:26 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/09 17:09:18 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 	void warning();
 	void error();
 public:
-	Harl(/* args */);
+	Harl();
 	~Harl();
 
 	void complain(std::string level);

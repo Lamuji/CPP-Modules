@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:01:07 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/05 19:17:49 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/09 19:30:50 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,13 @@ void	PhoneBook::search(int id)
 	while (i < id)
 	{
 		if (id >= 8)
-			break ;
+		{
+			std::cout<<setfill(' ')<<setw(10)<<i<<"|";
+			std::cout<<setfill(' ')<<setw(10)<<contact[i].getFirstName()<<"|";
+			std::cout<<setfill(' ')<<setw(10)<<contact[i].getLastName()<<"|";
+			std::cout<<setfill(' ')<<setw(10)<<contact[i].getNickName()<<"|"<<endl;
+			break;
+		}
 		std::cout<<setfill(' ')<<setw(10)<<i<<"|";
 		std::cout<<setfill(' ')<<setw(10)<<contact[i].getFirstName()<<"|";
 		std::cout<<setfill(' ')<<setw(10)<<contact[i].getLastName()<<"|";

@@ -5,31 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 16:30:09 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/09 19:07:37 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/09 17:07:53 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/09 18:29:38 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.h"
-#include "HumanA.h"
-#include "HumanB.h"
+#include "Harl.h"
 
-int main()
+int main(int ac, char **av)
 {
+	if (ac == 2)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		Harl karen;
+		karen.complain(av[1]);
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeap(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	else
+		std::cout<<"Usage: ./progname <arg>"<<std::endl;
 	return 0;
 }

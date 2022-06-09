@@ -1,3 +1,5 @@
+NAME = harlFilter
+
 SRC = main.cpp Harl.cpp
 
 CC = c++
@@ -5,11 +7,11 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : 
-	$(CC) $(FLAGS) $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 fclean :
-	rm -rf a.out
+	rm -rf $(NAME)
 
 re : 
-	rm -rf a.out
+	rm -rf $(NAME)
 	make all
