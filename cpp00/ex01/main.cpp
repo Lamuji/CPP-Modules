@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 15:50:40 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/05 19:11:12 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/11 01:36:07 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ int	main(void)
 		std::cin>>command;
 		std::cin.ignore();
 		if (!command.compare("ADD")){
-			repertoire.add(id);
+
+			if (id < 8)
+				repertoire.add(id);
+			else
+				std::cout<<"Phonebook is full !"<<std::endl; 
 			id++;
 		}
 		else if (!command.compare("SEARCH")) {

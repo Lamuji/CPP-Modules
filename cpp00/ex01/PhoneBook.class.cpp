@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:01:07 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/09 19:30:50 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/11 01:07:04 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	PhoneBook::add(int id)
 	string number;
 	string darksecret;
 
-	if (id == 8)
-		id = 0;
+	// if (id == 8)
+	// 	id = 0;
 	std::cout<<"First name : ";
 	getline(std::cin, firstname);
 	contact[id].setFirstName(firstname);
@@ -61,13 +61,7 @@ void	PhoneBook::search(int id)
 	while (i < id)
 	{
 		if (id >= 8)
-		{
-			std::cout<<setfill(' ')<<setw(10)<<i<<"|";
-			std::cout<<setfill(' ')<<setw(10)<<contact[i].getFirstName()<<"|";
-			std::cout<<setfill(' ')<<setw(10)<<contact[i].getLastName()<<"|";
-			std::cout<<setfill(' ')<<setw(10)<<contact[i].getNickName()<<"|"<<endl;
-			break;
-		}
+			id = 8;
 		std::cout<<setfill(' ')<<setw(10)<<i<<"|";
 		std::cout<<setfill(' ')<<setw(10)<<contact[i].getFirstName()<<"|";
 		std::cout<<setfill(' ')<<setw(10)<<contact[i].getLastName()<<"|";
