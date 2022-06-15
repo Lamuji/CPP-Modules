@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:01:07 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/11 01:07:04 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/15 19:16:51 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,37 @@ void	PhoneBook::search(int id)
 {
 	int i = 0;
 	int	num;
+	string firstname[8];
+	string lastname[8];
+	string nickname[8];
+	while (i < id)
+	{
+		firstname[i] = contact[i].getFirstName();
+		lastname[i] = contact[i].getLastName();
+		nickname[i] = contact[i].getNickName();
+		i++;
+	}
+	i = 0;
 	while (i < id)
 	{
 		if (id >= 8)
 			id = 8;
+		if (firstname[i].size() > 10){
+			firstname[i].resize(9);
+			firstname[i].push_back('.');
+			}
+		if (lastname[i].size() > 10){
+			lastname[i].resize(9);
+			lastname[i].push_back('.');
+			}
+		if (nickname[i].size() > 10){
+			nickname[i].resize(9);
+			nickname[i].push_back('.');
+			}
 		std::cout<<setfill(' ')<<setw(10)<<i<<"|";
-		std::cout<<setfill(' ')<<setw(10)<<contact[i].getFirstName()<<"|";
-		std::cout<<setfill(' ')<<setw(10)<<contact[i].getLastName()<<"|";
-		std::cout<<setfill(' ')<<setw(10)<<contact[i].getNickName()<<"|"<<endl;
+		std::cout<<setfill(' ')<<setw(10)<<firstname[i]<<"|";
+		std::cout<<setfill(' ')<<setw(10)<<lastname[i]<<"|";
+		std::cout<<setfill(' ')<<setw(10)<<nickname[i]<<"|"<<endl;
 		i++;
 	}
 	std::cout<<"[Which contact do you want to get infos ?]"<<endl<<"[Please enter its ID.]"<<endl<<endl;
