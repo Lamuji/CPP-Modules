@@ -6,7 +6,7 @@
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:32:24 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/15 00:43:37 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/15 17:48:16 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,31 @@ std::ostream &	operator<<(std::ostream &o, Fixed const & rhs)
 {
 	o << rhs.toFloat();
 	return o;
+}
+
+int		Fixed::operator++()
+{
+	++_fixed;
+	return _fixed;
+}
+
+int		Fixed::operator++(int)
+{
+	int value = _fixed;
+	++_fixed;
+	return value;
+}
+
+
+int		Fixed::operator--()
+{
+	--_fixed;
+	return _fixed;
+}
+
+int		Fixed::operator--(int)
+{
+	int value = _fixed;
+	--_fixed;
+	return value;
 }
