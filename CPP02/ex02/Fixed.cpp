@@ -6,7 +6,7 @@
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:32:24 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/15 17:48:16 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/16 19:22:12 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,40 @@
 
 Fixed::Fixed()
 {
-	std::cout<<"Default constructor called\n";
+	//std::cout<<"Default constructor called\n";
 	this->_fixed = 0;
 }
 
 Fixed::~Fixed(){
-	std::cout<<"Destructor called\n";
+	//std::cout<<"Destructor called\n";
 }
 
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout<<"Copy constructor called\n";
+	//std::cout<<"Copy constructor called\n";
 	*this = src;
 }
 
-Fixed::Fixed(int const n)
+Fixed::Fixed(int const &n)
 {
-	std::cout<<"Int constructor called\n";
+	//std::cout<<"Int constructor called\n";
 	this->_fixed = n << this->_nbbits;
 }
 
-Fixed::Fixed(float const n)
+Fixed::Fixed(float const &n)
 {
-	std::cout<<"Float constructor called\n";
-	this->_fixed = int(roundf(n * (1 << _nbbits)));
+	//std::cout<<"Float constructor called\n";
+	this->_fixed = roundf(n * (1 << _nbbits));
 }
 
 Fixed&	Fixed::operator=(Fixed const & rhs){
-	std::cout<<"Copy assignement operator called\n";
+	//std::cout<<"Copy assignement operator called\n";
 	this->_fixed = rhs.getRawBits();
 	return *this;
 }
 
 int		Fixed::getRawBits(void) const{
-	std::cout<<"getRawBits member function called\n";
+	//std::cout<<"getRawBits member function called\n";
 	return _fixed;
 }
 
@@ -72,29 +72,136 @@ std::ostream &	operator<<(std::ostream &o, Fixed const & rhs)
 	return o;
 }
 
-int		Fixed::operator++()
+Fixed& 		Fixed::operator++()
 {
-	++_fixed;
-	return _fixed;
+	_fixed++;
+	return *this;
 }
 
-int		Fixed::operator++(int)
+Fixed		Fixed::operator++(int)
 {
-	int value = _fixed;
-	++_fixed;
+	Fixed res(*this);
+	++*this;
+	return res;
+}
+
+Fixed&		Fixed::operator--()
+{
+	this->_fixed--;
+	return *this;
+}
+
+Fixed		Fixed::operator--(int)
+{
+	Fixed value(*this);
+	--*this;
 	return value;
 }
 
-
-int		Fixed::operator--()
+Fixed	Fixed::operator+(Fixed const &rhs)
 {
-	--_fixed;
-	return _fixed;
+	Fixed res;
+	res._fixed = this->_fixed + rhs._fixed;
+	return res;
 }
 
-int		Fixed::operator--(int)
+Fixed	Fixed::operator-(Fixed const &rhs)
 {
-	int value = _fixed;
-	--_fixed;
-	return value;
+	Fixed res;
+	res._fixed = this->_fixed - rhs._fixed;
+	return res;
+}
+
+Fixed	Fixed::operator*(Fixed const &rhs)
+{
+	Fixed res;
+	res = (this->toFloat() * rhs.toFloat());
+	return res;
+}
+
+Fixed	Fixed::operator/(Fixed const &rhs)
+{
+	Fixed res;
+	res._fixed = this->_fixed / rhs._fixed;
+	return res;
+}
+
+bool	Fixed::operator==(Fixed const &rhs)
+{
+	if (_fixed == rhs._fixed)
+		return 1;
+	else 
+		return 0;
+}
+
+bool	Fixed::operator!=(Fixed const &rhs)
+{
+	if (_fixed != rhs._fixed)
+		return 1;
+	else 
+		return 0;
+}
+
+bool	Fixed::operator>(Fixed const &rhs)
+{
+	if (_fixed > rhs._fixed)
+		return 1;
+	else 
+		return 0;
+}
+
+bool	Fixed::operator<(Fixed const &rhs)
+{
+	if (_fixed == rhs._fixed)
+		return 1;
+	else
+		return 0;
+}
+
+bool	Fixed::operator>=(Fixed const &rhs)
+{
+	if (_fixed > rhs._fixed || _fixed == rhs._fixed)
+		return 1;
+	else 
+		return 0;
+}
+
+bool	Fixed::operator<=(Fixed const &rhs)
+{
+	if (_fixed < rhs._fixed || _fixed == rhs._fixed)
+		return 1;
+	else 
+		return 0;
+}
+
+Fixed const	Fixed::min(Fixed const &nb1, Fixed const &nb2)
+{
+	if (nb1.getRawBits() < nb2.getRawBits())
+		return nb1;
+	else
+		return nb2;
+}
+
+Fixed	Fixed::min(Fixed &nb1, Fixed &nb2)
+{
+	if (nb1.getRawBits() < nb2.getRawBits())
+		return nb1;
+	else
+		return nb2;
+}
+
+Fixed const	Fixed::max(Fixed const &nb1, Fixed const &nb2)
+{
+	if (nb1.getRawBits() > nb2.getRawBits())
+		return nb1;
+	else
+		return nb2;
+}
+
+Fixed	Fixed::max(Fixed &nb1, Fixed &nb2)
+{
+	if (nb1.getRawBits() > nb2.getRawBits())
+		return nb1;
+	else
+		return nb2;
 }
