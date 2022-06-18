@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:10:30 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/14 18:28:56 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/18 15:19:21 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed()
 	this->_fixed = 0;
 }
 
-Fixed::~Fixed(){
+Fixed::~Fixed() {
 	std::cout<<"Destructor called\n";
 }
 

@@ -101,3 +101,10 @@ operateur de surcharge cest cool
 
 heritage :
 
+class chat et class chien auront des fonctions membres surement similaires (courir, manger, chier)
+mais certains qui different (miauler/aboyer)
+
+on peut creer une classe Animal dont les classe chaet et chien heriteront de la classe animal qui possedera les attriubut et fonction
+en commun
+
+
