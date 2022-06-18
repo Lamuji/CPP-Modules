@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:32:24 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/14 20:19:14 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/15 00:43:37 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const 
 {
-	return (float);
+	return ((float)_fixed / (1 <<_nbbits));
 }
 
 std::ostream &	operator<<(std::ostream &o, Fixed const & rhs)

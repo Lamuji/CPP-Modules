@@ -96,3 +96,8 @@ int& ballss = nbdeball -> une reference qui pointe sur une variable,
 et qui devrai toujours etre initialiser pour pointer sur qque chose
 dexistant.
 Si on modifie balls, cela mofifiera aussi ce sur quoi il pointe
+
+operateur de surcharge cest cool
+
+heritage :
+
