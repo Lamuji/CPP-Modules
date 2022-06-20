@@ -6,12 +6,14 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 17:43:47 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/20 10:35:26 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/20 17:00:59 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.h"
 #include "ScavTrap.h"
+#include "FragTrap.h"
+
 
 int main()
 {
@@ -35,6 +37,11 @@ int main()
 		ted.attack("PAF");
 		paf.takeDamage(20);
 	}
+
+	FragTrap Mag;
+	FragTrap Ram("Ram");
+	FragTrap Mal(Mag);
+
 	std::cout << std::endl;
 
 	return 0;

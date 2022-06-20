@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.h                                         :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 15:47:44 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/20 09:39:59 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/20 16:03:50 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/20 19:03:27 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#include "DiamondTrap.h"
 
-#include "ClapTrap.h"
+DiamondTrap::DiamondTrap(): FragTrap(), ScavTrap(){
+	std::cout<<"Diamond default constructor called\n";
+}
 
-class ScavTrap : public ClapTrap
-{
-private :
+DiamondTrap::DiamondTrap(std::string name){
+	std::cout<<"Diamond "<<name<<" parametrical constructor called\n";
+}
 
-public :
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const &copy);
-	~ScavTrap();
-	
-void	guardGate();
-void	attack(const std::string  & target);
-ScavTrap &	operator=(ScavTrap const &rhs);
-	
-	
-};
-
-std::ostream &	operator<<(std::ostream &o, ScavTrap const & rhs);
-
-
-#endif
+DiamondTrap::~DiamondTrap(){
+	std::cout<<"DiamondTrap destructor called\n";
+}
