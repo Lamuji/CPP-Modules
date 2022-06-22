@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Jun 17 17:58:13 2022
+# Make data base, printed on Wed Jun 22 19:35:28 2022
 
 # Variables
 
@@ -41,7 +41,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/v2/dbvlmy_s0gzdqldggwjnz0r80000gn/T/vscode-ipc-60f66dbc-bf81-4cb7-bf07-c508155798fe.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/v2/dbvlmy_s0gzdqldggwjnz0r80000gn/T/vscode-ipc-d64936b3-841e-4aa5-8480-5aaea66b6ff8.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -71,7 +71,7 @@ HOME = /Users/ramzi
 # default
 MAKEFILEPATH := /Applications/Xcode-beta.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/ramzi/Library/Application Support/Code/CachedData/4af164ea3a06f701fe3e89a2bcbb421d2026b68f
+VSCODE_CODE_CACHE_PATH = /Users/ramzi/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = ramzi
 # environment
@@ -109,7 +109,7 @@ TMPDIR = /var/folders/v2/dbvlmy_s0gzdqldggwjnz0r80000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/ramzi/Library/Application Support/Code/1.68.0-main.sock
+VSCODE_IPC_HOOK = /Users/ramzi/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -117,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.12933784749.12933784755
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.12934194279.12934194285
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -145,7 +145,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 77845
+VSCODE_PID = 49131
 # variable set hash-table stats:
 # Load=66/1024=6%, Rehash=0, Collisions=1/87=1%
 
@@ -155,9 +155,9 @@ VSCODE_PID = 77845
 
 # Directories
 
-# . (device 16777225, inode 12933208639): 10 files, no impossibilities.
+# . (device 16777225, inode 12933208639): 11 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -229,6 +229,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Jun 17 17:58:13 2022
+# Finished Make data base on Wed Jun 22 19:35:28 2022
 
  

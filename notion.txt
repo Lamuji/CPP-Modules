@@ -107,4 +107,6 @@ mais certains qui different (miauler/aboyer)
 on peut creer une classe Animal dont les classe chaet et chien heriteront de la classe animal qui possedera les attriubut et fonction
 en commun
 
+On peut override les fonctions membre de la class mere sur la classe fille
+cad quon peut les redefinir sans changer le prototypes
 

@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:43:47 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/21 15:18:14 by ramzi            ###   ########.fr       */
+/*   Created: 2022/06/21 17:47:27 by ramzi             #+#    #+#             */
+/*   Updated: 2022/06/21 18:14:50 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#ifndef WRONGCAT_H
+#define WRONGCAT_H
 
-int main()
+#include "WrongAnimal.h"
+
+class WrongCat : public WrongAnimal
 {
-	ClapTrap player1("P1"), player2("P2");
-	player1.attack("P2");
-	player2.takeDamage(2);
-	return 0;
-}
+public :
+
+	WrongCat();
+	~WrongCat();
+	WrongCat(WrongCat const &copy);
+
+	void	makeSound() const;
+};
+
+#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:33:02 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/20 19:07:27 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/21 15:22:56 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public :
 	FragTrap::_HitPoints;
 	ScavTrap::_EnergyPoints;
 	FragTrap::_AttackDamage;
-	ScavTrap::attack();
+	void	ScavTrap::attack();
 	void			whoAmI();
 };
 

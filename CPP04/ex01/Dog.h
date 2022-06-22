@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:43:47 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/21 15:18:14 by ramzi            ###   ########.fr       */
+/*   Created: 2022/06/21 16:22:35 by ramzi             #+#    #+#             */
+/*   Updated: 2022/06/22 19:16:05 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#ifndef DOG_H
+#define DOG_H
 
-int main()
+#include "Animal.h"
+#include "brain.h"
+
+class Dog : public Animal
 {
-	ClapTrap player1("P1"), player2("P2");
-	player1.attack("P2");
-	player2.takeDamage(2);
-	return 0;
-}
+private :
+	Brain *_B;
+public :
+
+	Dog();
+	~Dog();
+	Dog(Dog const &copy);
+
+	void	makeSound() const;
+};
+
+#endif

@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   brain.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:43:47 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/21 15:18:14 by ramzi            ###   ########.fr       */
+/*   Created: 2022/06/22 18:48:53 by ramzi             #+#    #+#             */
+/*   Updated: 2022/06/22 19:09:41 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#ifndef BRAIN_H
+# define BRAIN_H
 
-int main()
-{
-	ClapTrap player1("P1"), player2("P2");
-	player1.attack("P2");
-	player2.takeDamage(2);
-	return 0;
-}
+#include <string>
+#include <iostream>
+
+class Brain {
+
+private :
+	std::string _ideas[100];
+public :
+	Brain();
+	Brain(const Brain &copy);
+	~Brain();
+std::string	getIdeas();
+Brain &	operator=(const Brain &rhs);
+
+};
+
+#endif

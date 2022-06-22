@@ -5,17 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 17:43:47 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/21 15:18:14 by ramzi            ###   ########.fr       */
+/*   Created: 2022/06/21 16:02:49 by ramzi             #+#    #+#             */
+/*   Updated: 2022/06/22 19:44:55 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#include "Animal.h"
+#include "Cat.h"
+#include "Dog.h"
+
 
 int main()
 {
-	ClapTrap player1("P1"), player2("P2");
-	player1.attack("P2");
-	player2.takeDamage(2);
-	return 0;
+	Animal *Animals[10];
+	for(int i = 0;i<10;i++){
+		if (i > 4)
+			Animals[i] = new Cat();
+		Animals[i] = new Dog();
+	}
+return 0;
 }
