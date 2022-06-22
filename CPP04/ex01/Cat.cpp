@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:38:15 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/22 19:18:07 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/23 00:53:43 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Cat::~Cat(){
 
 Cat::Cat(Cat const &copy){
 	_type = copy._type;
+	_B = new Brain();
 	std::cout<<"Cat copy constructor called\n";
 }
 

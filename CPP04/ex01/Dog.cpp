@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:49:00 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/22 19:16:42 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/23 00:54:17 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Dog::~Dog(){
 }
 
 Dog::Dog(Dog const &copy){
+	_B = new Brain();
 	_type = copy._type;
 	std::cout<<"Dog copy constructor called\n";
 }
