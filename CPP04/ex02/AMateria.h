@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   AMateria.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 16:22:35 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/23 01:49:55 by ramzi            ###   ########.fr       */
+/*   Created: 2022/06/23 16:24:09 by ramzi             #+#    #+#             */
+/*   Updated: 2022/06/23 16:29:13 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef AMATERIA_H
+# define AMATERIA_H
 
-#include "Animal.h"
-#include "brain.h"
+#include <iostream>
 
-class Dog : public Animal
+class AMateria
 {
-private :
-	Brain *_B;
-public :
-
-	Dog();
-	~Dog();
-	Dog(Dog const &copy);
-
-Dog &	operator=(const Dog &dog);
-	void	makeSound() const;
+protected:
+	std::string _Type;
+public:
+	AMateria(std::string const & type);
+	
+	std::string const & getType() const; //Returns the materia type
+	virtual AMateria* clone() const = 0;
+	virtual void use(ICharacter& target);
 };
 
 #endif

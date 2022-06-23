@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:02:49 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/23 01:20:42 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/23 02:00:32 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int main()
 	Anim[2] = new Animal();
 	Anim[2]->makeSound();
 	Anim[2] = Anim[1];
-	Anim[2]->getType;
+	std::cout<<Anim[2]->getType()<<std::endl;
 	Anim[2]->makeSound();
-	for (int j = 0;j<3;j++)
+	for (int j = 0;j<2;j++)
 		delete Anim[j];
-return 0 ;
+return 0;
 }

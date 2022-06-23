@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:25:04 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/23 01:16:56 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/23 01:49:39 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ private :
 public :
 
 	Cat();
-	~Cat();
+	virtual ~Cat();
 	Cat(Cat const &copy);
 
+Cat &	operator=(const Cat &cat);
 	void	makeSound() const;
 };
 

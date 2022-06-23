@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:49:00 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/23 00:54:17 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/23 01:51:00 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,12 @@ Dog::Dog(Dog const &copy){
 
 void	Dog::makeSound() const {
 	std::cout<<"Animal "<<_type<<" is WafWafing\n";
+}
+
+Dog &	Dog::operator=(const Dog &dog){
+	if (this == &dog)
+		return *this;
+	_B = dog._B;
+	_type = dog._type;
+	return *this;
 }
