@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 16:22:35 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/25 15:11:45 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/06/25 16:59:52 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/06/25 17:13:05 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#include "Bureaucrat.h"
 
-#include "Animal.h"
-#include "brain.h"
-
-class Dog : public Animal
-{
-private :
-	Brain *_B;
-public :
-
-	Dog();
-	~Dog();
-	Dog(Dog const &copy);
-
-Dog &	operator=(const Dog &dog);
-	void	makeSound() const;
-};
-
-#endif
+int main(){
+	try{
+		Bureaucrat B("B1", 0);
+		B.UpGrade();
+		std::cout<<B<<"grade is "<<B.getGrade()<<std::endl;
+		
+		Bureaucrat C;
+	}
+	catch(std::exception &e)
+	{
+		std::cerr<<"exception caught : "<<e.what()<<std::endl;
+	}
+	
+	return 0;
+	
+}

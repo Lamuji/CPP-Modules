@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:49:00 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/23 01:51:00 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:26:54 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Dog::~Dog(){
 	std::cout<<"Dog class destroyed\n";
 }
 
-Dog::Dog(Dog const &copy){
+Dog::Dog(Dog const &copy) : Animal::Animal(){
 	_B = new Brain();
 	_type = copy._type;
 	std::cout<<"Dog copy constructor called\n";
@@ -36,7 +36,7 @@ void	Dog::makeSound() const {
 Dog &	Dog::operator=(const Dog &dog){
 	if (this == &dog)
 		return *this;
-	_B = dog._B;
-	_type = dog._type;
+	this->_B = dog._B;
+	this->_type = dog._type;
 	return *this;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:38:15 by ramzi             #+#    #+#             */
-/*   Updated: 2022/06/23 01:51:03 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:26:51 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::~Cat(){
 	std::cout<<"Cat class destroyed\n";
 }
 
-Cat::Cat(Cat const &copy){
+Cat::Cat(Cat const &copy) : Animal::Animal(){
 	_type = copy._type;
 	_B = new Brain();
 	std::cout<<"Cat copy constructor called\n";
@@ -32,8 +32,8 @@ Cat::Cat(Cat const &copy){
 Cat &	Cat::operator=(const Cat &cat){
 	if (this == &cat)
 		return *this;
-	_B = cat._B;
-	_type = cat._type;
+	this->_B = cat._B;
+	this->_type = cat._type;
 	return *this;
 }
 
