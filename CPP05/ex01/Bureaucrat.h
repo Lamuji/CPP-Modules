@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 14:30:18 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/27 19:49:33 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/27 20:01:07 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 #include <iostream>
 #include <string>
-#include <exception>
+#include "Form.h"
+
+class Form;
 
 class Bureaucrat
 {
@@ -34,6 +36,8 @@ public:
 	
 	void		UpGrade();
 	void		DownGrade();
+	void		signForm(Form &F) const;
+
 	class GradeTooHighException : public std::exception{
 		public :
 			virtual const char* what() const throw(){

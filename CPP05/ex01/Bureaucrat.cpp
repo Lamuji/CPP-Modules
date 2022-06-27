@@ -6,13 +6,13 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 15:44:32 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/27 17:23:02 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/27 20:32:36 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
 
-Bureaucrat::Bureaucrat(): _name("Default"), _grade(150){
+Bureaucrat::Bureaucrat(): _name("Default burokrat"), _grade(150){
 	std::cout<<"Default ctor called\n";
 }
 
@@ -63,4 +63,12 @@ void	Bureaucrat::DownGrade(){
 		throw(GradeTooLowException());
 	else
 		_grade++;
+}
+
+void	Bureaucrat::signForm(Form &F) const {
+	F.beSigned(*this);
+	if (F.getSigned() == true)
+		std::cout<<this->_name<<" signed "<<F.getName()<<std::endl;
+	else
+		std::cout<<this->_name<<" can't sign "<<F.getName()<<" because has too low grade\n";
 }
