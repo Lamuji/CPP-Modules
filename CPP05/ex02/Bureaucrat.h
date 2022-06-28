@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 14:30:18 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/27 20:01:07 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/28 20:44:17 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Form.h"
 
 class Form;

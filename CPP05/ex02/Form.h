@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 17:26:31 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/27 20:15:23 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/28 20:55:03 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 
 #include "Bureaucrat.h"
 
+
 class Bureaucrat;
 
 class Form
 {
 private:
 	const std::string _name;
-	const int	_gradeSign;
-	const int	_gradeExec;
+	const int		_gradeSign;
+	const int		_gradeExec;
 	bool _signed;
 public:
-	
+
 	Form();
 	Form(const Form &copy);
 	Form(const std::string name, int gradeSign, int gradeExec);
-	~Form();
+	virtual ~Form() = 0;
 
 	Form&	operator=(const Form& rhs);
 	int			getGradeSign()const;
