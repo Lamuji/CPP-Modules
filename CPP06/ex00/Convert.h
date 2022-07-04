@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   convert.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/04 19:01:41 by rfkaier          ###   ########.fr       */
+/*   Created: 2022/07/04 18:46:26 by rfkaier           #+#    #+#             */
+/*   Updated: 2022/07/04 19:05:39 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.h"
+#ifndef CONVERT_H
+# define CONVERT_H
 
-int main(int ac, char **av){
+#include <iostream>
+#include <string>
+#include <limits.h>
 
-	if (ac != 2){
-		std::cerr<<"Usage : ./progname <arg>\n";
-		exit(EXIT_FAILURE);
-	}
-	else {
-		Convert C;
-		C.converter(av[1]);
-	}
-	return 0;
-}
+class Convert
+{
+private:
+	int		_i;
+	char	_c;
+	double 	_d;
+	float 	_f;
+	std::string _arg;
+public:
+	Convert();
+	~Convert();
+	Convert(Convert const &copy);
+
+	Convert& operator=(Convert const &rhs);
+	void	converter(char *str);
+};
+
+
+
+#endif
