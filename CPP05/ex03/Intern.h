@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:02:07 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/29 17:27:43 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/01 16:48:53 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,14 @@ public:
 
 Intern&	operator=(const Intern &rhs);
 
-Form*	makeForm(std::string s1, std::string s2);
+class FormNotFound : public std::exception {
+	public :
+	virtual const char* what() const throw(){
+			return ("There is no form matching this name\n");
+		}
 };
 
+Form*	makeForm(std::string s1, std::string s2);
+};
 
 #endif

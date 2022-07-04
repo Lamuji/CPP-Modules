@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 17:22:07 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/29 15:17:41 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/30 16:43:29 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-	~ShrubberyCreationForm();
+	virtual ~ShrubberyCreationForm();
 	//ShrubberyCreationForm& operator=(ShrubberyCreationForm const &rhs);
 
 	std::string getTarget() const;

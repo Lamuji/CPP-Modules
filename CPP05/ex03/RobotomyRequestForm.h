@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 12:34:01 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/29 15:14:58 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/30 16:43:24 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(std::string target);
 	RobotomyRequestForm(const RobotomyRequestForm &copy);
-	~RobotomyRequestForm();
+	virtual ~RobotomyRequestForm();
 	//RobotomyRequestForm& operator=(RobotomyRequestForm const &rhs);
 
 	std::string getTarget() const;

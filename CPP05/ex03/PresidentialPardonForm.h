@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.h                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 15:38:12 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/29 15:14:54 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/06/30 16:43:14 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(const PresidentialPardonForm &copy);
-	~PresidentialPardonForm();
+	virtual ~PresidentialPardonForm();
 	//PresidentialPardonForm& operator=(PresidentialPardonForm const &rhs);
 
 	std::string getTarget() const;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:01:49 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/29 17:24:26 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/01 16:49:30 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,26 @@ Intern&	Intern::operator=(Intern const &rhs){
 	return *this;
 }
 
-Form*	makeForm(std::string s1, std::string s2){
+Form*	Intern::makeForm(std::string s1, std::string s2){
 
-	std::string form[] = {"robotomy","presidential","shrubbery"};
+	std::string form[3] = {"robotomy request","presidential pardon","shrubbery creation"};
 	int i;
-	for (i = 0; i < 2; i++){
-		if (form[i].find(s1))
+	for (i = 0; i < 3; i++){
+		if (!s1.compare(form[i]))
 			break;
 	}
 	switch (i)
 	{
 	case 0:
+		std::cout<<"Intern creates "<<s2<<std::endl;
 		return new RobotomyRequestForm(s2);
 	case 1:
+		std::cout<<"Intern creates "<<s2<<std::endl;
 		return new PresidentialPardonForm(s2);
 	case 2:
+		std::cout<<"Intern creates "<<s2<<std::endl;
 		return new ShrubberyCreationForm(s2);
 	default:
-		break;
+		throw(FormNotFound());
 	}
-	std::cerr<<"There is no form matches this name\n";
-	return NULL;
 }

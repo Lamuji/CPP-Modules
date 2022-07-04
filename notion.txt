@@ -110,3 +110,13 @@ en commun
 On peut override les fonctions membre de la class mere sur la classe fille
 cad quon peut les redefinir sans changer le prototypes
 
+
+
+cast :
+
+static cast : 
+fonctionne pour les meme arbres de classe, pas pour des class qui nont rien a voir entre elle
+protege dailleurs de ce genre de cast 
+on peut faire des downcast explicit et des upcast 
+
+dynamic cast :

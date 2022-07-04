@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 17:26:31 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/06/29 15:15:50 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/01 16:34:26 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Form();
 	Form(const Form &copy);
 	Form(const std::string name, int gradeSign, int gradeExec);
-	~Form();
+	virtual ~Form();
 
 	Form&	operator=(const Form& rhs);
 	int			getGradeSign()const;
