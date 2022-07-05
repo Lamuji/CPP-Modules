@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/04 19:01:41 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/05 13:19:01 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int ac, char **av){
 	}
 	else {
 		Convert C;
-		C.converter(av[1]);
+		C.detectType(av[1]);
 	}
 	return 0;
 }

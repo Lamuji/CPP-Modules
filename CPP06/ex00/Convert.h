@@ -6,7 +6,7 @@
 /*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:46:26 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/07/04 19:05:39 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/05 14:35:41 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <limits.h>
+#include <iomanip>
 
 class Convert
 {
@@ -31,7 +32,8 @@ public:
 	Convert(Convert const &copy);
 
 	Convert& operator=(Convert const &rhs);
-	void	converter(char *str);
+	void	detectType(char *str);
+	void	convert(int i, char c, float f, double d);
 };
 
 
