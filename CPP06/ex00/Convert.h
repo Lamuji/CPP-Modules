@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.h                                          :+:      :+:    :+:   */
+/*   Convert.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:46:26 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/07/05 14:35:41 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/06 14:58:20 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,14 @@ public:
 	Convert();
 	~Convert();
 	Convert(Convert const &copy);
+	Convert(const char* str);
 
 	Convert& operator=(Convert const &rhs);
-	void	detectType(char *str);
-	void	convert(int i, char c, float f, double d);
+	
+	int IsIntType();
+	int IsFloatType();
+	int IsCharType();
+	int IsDoubleType();
 };
 
 

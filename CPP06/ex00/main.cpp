@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/05 13:19:01 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/06 14:52:51 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main(int ac, char **av){
 		exit(EXIT_FAILURE);
 	}
 	else {
-		Convert C;
-		C.detectType(av[1]);
+		Convert C(av[1]);
 	}
 	return 0;
 }

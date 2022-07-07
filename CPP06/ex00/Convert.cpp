@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:46:17 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/07/05 14:56:40 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/06 14:59:15 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ Convert::Convert(Convert const &copy){
 	this->_d = copy._d;
 	this->_i = copy._i;
 	this->_f = copy._f;
-	this->_arg = copy._arg;
 }
+
+Convert::Convert(const char* str): _arg(str) {}
 
 Convert::~Convert(){}
 
@@ -33,51 +34,59 @@ Convert&	Convert::operator=(const Convert &rhs){
 	return *this;
 }
 
-void	Convert::detectType(char *str){
-	int dot = 0;
-	//int letter = 0;
-	int numeric = 0;
-	int neg = 0;
-	int alpha = 0;
-	int f = 0;
 
-	char *pEnd;
+int Convert::IsIntType() {
+    int i = 0;
+    while (_arg[i])
+    {
+        if(i == 0 && (_arg[i] == '-' || _arg[i] == '+'))
+            i++;
+        if(_arg[i] < 48 || _arg[i] > 57)
+            return false;
+        i++;
+    }
+    return true;
+}
 
-	for (size_t i = 0; i <= strlen(str); i++){
-		if (str[i] == '.')
-			dot = 1;
-		if (isnumber(str[i]))
-			numeric = 1;
-		if (isalpha(str[i]) && i != strlen(str))
-			alpha = 1;
-		if (i == 0 && str[i] == '-')
-			neg = 1;
-		if (str[i] == '.')
-			dot = 1;
-		if (str[strlen(str) - 1] == 'f')
-			f = 1;
-	}
-	if (alpha == 1)
-		_c = *str;
-	if (dot == 1 && f == 1){
-		_f = strtof(str, &pEnd);
-		std::cout <<"char : " << static_cast<char>(_f) << std::endl;
-		std::cout <<"int : " << static_cast<int>(_f) << std::endl;
-		std::cout << std::fixed << std::setprecision(2) <<"double : " << static_cast<double>(_f) << std::endl;
-		std::cout << std::fixed << std::setprecision(2) <<"float : "<<  _f << "f" << std::endl;
-	}
-	else if (dot == 1 && f == 0 && numeric == 1 && alpha == 0){
-		_d = strtod(str, &pEnd);
-		std::cout <<"char : " << static_cast<char>(_d) << std::endl;
-		std::cout <<"int : " << static_cast<int>(_d) << std::endl;
-		std::cout << std::fixed << std::setprecision(2) << "double : " << static_cast<double>(_d) << std::endl;
-		std::cout << std::fixed << std::setprecision(2) << "float : " << static_cast<float>(_d) << "f" << std::endl;
-	}
-	else if (dot == 0 && alpha == 0 && f == 0 && numeric == 1){
-		_i = atoi(str);
-		std::cout <<"char : " << static_cast<char>(_d) << std::endl;
-		std::cout <<"int : " << static_cast<int>(_d) << std::endl;
-		std::cout << std::fixed << std::setprecision(2) << "double : " << static_cast<double>(_d) << std::endl;
-		std::cout << std::fixed << std::setprecision(2) << "float : " << static_cast<float>(_d) << "f" << std::endl;
-	}
+int Convert::IsFloatType() {
+    int i = 0;
+    while (_arg[i])
+    {
+        if(i == 0 && (_arg[i] == '-' || _arg[i] == '+'))
+        {
+            if(_arg[1] == '.')
+                return false;
+            i++;
+        }
+        if((_arg[i] < 48 || _arg[i] > 57) && _arg[i] != '.')
+        {
+            if(_arg[i] != 'f' && _arg[i + 1] != '\0')
+                return false;
+        }
+        i++;
+    }
+    if(_arg[0] == '.' || _arg[i - 1] != 'f' || _arg[i - 2] == '.')
+        return false;
+    return true;
+}
+
+int Convert::IsDoubleType() {
+    int i = 0;
+    while (_arg[i])
+    {
+        if(i == 0 && (_arg[i] == '-' || _arg[i] == '+'))
+            i++;
+        if((_arg[i] < 48 || _arg[i] > 57) && _arg[i] != '.')
+            return false;
+        i++;
+    }
+    if(_arg[0] == '.' || _arg[i - 1] == '.')
+        return false;
+    return true;
+}
+
+int Convert::IsCharType() {
+    if(_arg[0] != '\0' && _arg[1] == '\0')
+        return true;
+    return false;
 }
