@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convert.h                                          :+:      :+:    :+:   */
+/*   convert.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:46:26 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/07/06 14:58:20 by ramzi            ###   ########.fr       */
+/*   Updated: 2022/07/07 21:07:42 by rfkaier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,31 @@ private:
 	char	_c;
 	double 	_d;
 	float 	_f;
-	std::string _arg;
+	std::string	_arg;
 public:
 	Convert();
 	~Convert();
 	Convert(Convert const &copy);
-	Convert(const char* str);
+	Convert(char* str);
 
 	Convert& operator=(Convert const &rhs);
 	
-	int IsIntType();
-	int IsFloatType();
-	int IsCharType();
-	int IsDoubleType();
+
+	bool IsIntType();
+	bool IsFloatType();
+	bool IsCharType();
+	bool IsDoubleType();
+
+	// void getI(int i) const;
+	// void getF(float f) const;
+	// void getD(double d) const;
+	// void getC(char c) const;
+	// int  	setI();
+	// float	setF();
+	// double	setD();
+	// char	setC();
+
+	void	convert();
 };
 
 
