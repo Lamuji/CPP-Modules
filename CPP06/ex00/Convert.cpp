@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:46:17 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/07/07 21:15:06 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/08 21:23:03 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,30 +96,57 @@ bool Convert::IsCharType() {
 void Convert::convert(){
 	if (this->IsCharType()){
 		_c = std::stoi(_arg);
-		std::cout<<"char: "<< static_cast<char>(_c) <<std::endl;
+		if ((_c >= 0 && _c <= 31) || _arg[0] == '-')
+			std::cout<<"char: "<<"Non displayable"<<std::endl;
+		else
+			std::cout<<"char: "<< static_cast<char>(_c) <<std::endl;
 		std::cout<<"int: "<<static_cast<int>(_c)<<std::endl;
 		std::cout<<"float: "<<std::fixed << std::setprecision(2)<<static_cast<float>(_c)<<"f"<<std::endl;
 		std::cout<<"double: "<<std::fixed << std::setprecision(2)<<static_cast<double>(_c)<<std::endl;
 	}
 	else if (this->IsIntType()){
 		_i = std::stoi(_arg);
-		std::cout<<"char: "<< static_cast<char>(_i) <<std::endl;
+		if ((_i >= 0 && _i <= 31) || _arg[0] == '-')
+			std::cout<<"char: "<<"Non displayable"<<std::endl;
+		else
+			std::cout<<"char: "<< static_cast<char>(_i) <<std::endl;
 		std::cout<<"int: "<<_i<<std::endl;
 		std::cout<<"float: "<<std::fixed << std::setprecision(2)<<static_cast<float>(_i)<<"f"<<std::endl;
 		std::cout<<"double: "<<std::fixed << std::setprecision(2)<<static_cast<double>(_i)<<std::endl;
 	}
 	else if (this->IsFloatType()){
 		_f = std::stof(_arg);
-		std::cout<<"char: "<<static_cast<char>(_f) <<std::endl;
+		if ((_f >= 0 && _f <= 31) || _arg[0] == '-')
+			std::cout<<"char: "<<"Non displayable"<<std::endl;
+		else
+			std::cout<<"char: "<< static_cast<char>(_f) <<std::endl;
 		std::cout<<"int: "<<static_cast<int>(_f)<<std::endl;
 		std::cout<<"float: "<<std::fixed<<std::setprecision(2)<<_f<<"f"<<std::endl;
 		std::cout<<"double: "<<std::fixed<<std::setprecision(2)<<static_cast<double>(_f)<<std::endl;
 	}
 	else if (this->IsDoubleType()){
 		_d = std::stod(_arg);
-		std::cout<<"char: "<<static_cast<char>(_d) <<std::endl;
+		if ((_d >= 0 && _d <= 31) || _arg[0] == '-')
+			std::cout<<"char: "<<"Non displayable"<<std::endl;
+		else
+			std::cout<<"char: "<< static_cast<char>(_d) <<std::endl;
 		std::cout<<"int: "<<static_cast<int>(_d)<<std::endl;
 		std::cout<<"float: "<<std::fixed << std::setprecision(2)<<static_cast<float>(_d)<<"f"<<std::endl;
 		std::cout<<"double: "<<std::fixed << std::setprecision(2)<<_d<<std::endl;
 	}
+	else if (_arg == "nan" || _arg == "+inf" || _arg == "-inf"){
+		std::cout<<"char: Impossible"<<std::endl;
+		std::cout<<"int: Impossible"<<std::endl;
+		std::cout<<"float: "<<_arg<<"f"<<std::endl;
+		std::cout<<"double: "<<_arg<<std::endl;
+	}
+	else if (_arg == "nanf" || _arg == "+inff" || _arg == "-inff"){
+		std::cout<<"char: Impossible"<<std::endl;
+		std::cout<<"int: Impossible"<<std::endl;
+		std::cout<<"float: "<<_arg<<std::endl;
+		_arg.erase(_arg.end() - 1);
+		std::cout<<"double: "<<_arg<<std::endl;
+	}
+	else
+		throw(NonSenseConvertion());
 }

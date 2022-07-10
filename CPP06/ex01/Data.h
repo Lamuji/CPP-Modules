@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/08 21:24:45 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/09 00:14:22 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/09 19:21:21 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.h"
+#ifndef DATA_H
+# define DATA_H
 
-int main(int ac, char **av){
+#include <iomanip>
+#include <iostream>
 
-	if (ac != 2){
-		std::cerr<<"Usage : ./progname <arg>\n";
-		exit(EXIT_FAILURE);
-	}
-	else {
-		try{
-			Convert C(av[1]);
-		}
-		catch (std::exception &e){
-			std::cout<<"Exception caught :"<<e.what()<<std::endl;
-		}
-	}
-	return 0;
-}
+struct Data
+{
+	int a;
+	std::string str;
+	float f;
+	double d;
+};
+	uintptr_t	serialize(Data *ptr);
+	Data 		*deserialize(uintptr_t raw);
+
+#endif 

@@ -5,26 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/08 21:24:45 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/10 14:25:59 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/10 17:40:45 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.h"
+#include "Base.h"
 
-int main(int ac, char **av){
+int main(){
+	Base *p;
 
-	if (ac != 2){
-		std::cerr<<"Usage : ./progname <arg>\n";
-		exit(EXIT_FAILURE);
-	}
-	else {
-		try{
-			Convert C(av[1]);
-		}
-		catch (std::exception &e){
-			std::cout<<"Exception caught :"<<e.what()<<std::endl;
-		}
-	}
-	return 0;
+	p = generate();
+
+	identify(p);
+	identify(&(*p));
 }

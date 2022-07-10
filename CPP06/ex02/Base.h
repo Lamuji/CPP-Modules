@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/08 21:24:45 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/09 21:50:13 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/10 17:38:51 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.h"
+#ifndef BASE_H
+# define BASE_H
 
-int main(int ac, char **av){
+#include <iostream>
 
-	if (ac != 2){
-		std::cerr<<"Usage : ./progname <arg>\n";
-		exit(EXIT_FAILURE);
-	}
-	else {
-		try{
-			Convert C(av[1]);
-		}
-		catch (std::exception &e){
-			std::cout<<"Exception caught :"<<e.what()<<std::endl;
-		}
-	}
-	return 0;
-}
+class Base
+{
+public:
+	
+	virtual ~Base(){};
+};
+
+class A: public Base{
+
+};
+
+class B: public Base{
+
+};
+
+class C: public Base{
+
+};
+
+Base *generate();
+void identify(Base *p);
+void identify(Base &p);
+
+#endif

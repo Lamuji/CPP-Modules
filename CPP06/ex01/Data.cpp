@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/08 21:24:45 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/09 18:11:35 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/09 19:53:23 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.h"
+#include "Data.h"
 
-int main(int ac, char **av){
+uintptr_t serialize(Data* ptr){
 
-	if (ac != 2){
-		std::cerr<<"Usage : ./progname <arg>\n";
-		exit(EXIT_FAILURE);
-	}
-	else {
-		try{
-			Convert C(av[1]);
-		}
-		catch (std::exception &e){
-			std::cout<<"Exception caught :"<<e.what()<<std::endl;
-		}
-	}
-	return 0;
+	return reinterpret_cast<uintptr_t>(ptr);
+}
+
+Data *deserialize(uintptr_t raw){
+	return reinterpret_cast<Data*>(raw);
 }

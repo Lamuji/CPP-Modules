@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.h                                          :+:      :+:    :+:   */
+/*   Convert.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rfkaier <rfkaier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 18:46:26 by rfkaier           #+#    #+#             */
-/*   Updated: 2022/07/07 21:07:42 by rfkaier          ###   ########.fr       */
+/*   Updated: 2022/07/08 21:22:31 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <limits.h>
 #include <iomanip>
+#include <math.h>
 
 class Convert
 {
@@ -40,16 +41,14 @@ public:
 	bool IsCharType();
 	bool IsDoubleType();
 
-	// void getI(int i) const;
-	// void getF(float f) const;
-	// void getD(double d) const;
-	// void getC(char c) const;
-	// int  	setI();
-	// float	setF();
-	// double	setD();
-	// char	setC();
-
 	void	convert();
+
+	class NonSenseConvertion : public std::exception {
+		public :
+		virtual const char* what() const throw(){
+			return "Invalid Argument\n";
+		}
+	};
 };
 
 

@@ -5,26 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 17:23:32 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/08 21:24:45 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/09 19:53:34 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/09 21:48:12 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Convert.h"
+#include "Data.h"
 
-int main(int ac, char **av){
+int main(){
+	Data *D = new Data();
+	Data *D2;
+	uintptr_t raw;
+	D->a = 42;
+	D->d = 42.00;
+	D->f = 42.00;
+	D->str = "quarante deux";
+	std::cout<< D->a<<std::endl;
+	std::cout<< D->d<<std::endl;
+	std::cout<< D->f<<std::endl;
+	std::cout<< D->str<<std::endl<<std::endl;
 
-	if (ac != 2){
-		std::cerr<<"Usage : ./progname <arg>\n";
-		exit(EXIT_FAILURE);
-	}
-	else {
-		try{
-			Convert C(av[1]);
-		}
-		catch (std::exception &e){
-			std::cout<<"Exception caught :"<<e.what()<<std::endl;
-		}
-	}
+	std::cout << "serialization...\n\n";
+	raw = serialize(D);
+	std::cout << "and deserialization...\n\n";
+	D2 = deserialize(raw);
+	std::cout<< D2->a<<std::endl;
+	std::cout<< D2->d<<std::endl;
+	std::cout<< D2->f<<std::endl;
+	std::cout<< D2->str<<std::endl<<std::endl;
+	//D = deserialize(p);
 	return 0;
 }
