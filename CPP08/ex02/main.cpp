@@ -5,19 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 14:25:59 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/10 19:54:11 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/19 17:54:18 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/20 11:15:37 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.h"
+#include "MutantStack.hpp"
+#include "MutantStack.cpp"
 
-int main(){
-	Base *p;
+int main()
+{
+	MutantStack<int> mstack;
 
-	p = generate();
+	mstack.push(5);
+	mstack.push(17);
 
-	identify(p);
-	identify(&(*p));
-	//delete p;
+	std::cout << mstack.top() << std::endl;
+
+	mstack.pop();
+
+	std::cout << mstack.size() << std::endl;
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737); //[...] mstack.push(0);
+
+	MutantStack<int>::iterator it = mstack.begin(); MutantStack<int>::iterator ite = mstack.end();
+
+	++it;
+	--it;
+
+	while (it != ite) {
+		std::cout << *it << std::endl;
+		++it; 
+	}
+
+	std::stack<int> s(mstack);
+
+	return 0;
 }

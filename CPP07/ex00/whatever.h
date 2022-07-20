@@ -1,23 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 14:25:59 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/10 19:54:11 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/11 12:59:54 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/11 14:27:08 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.h"
+#ifndef WHATEVER_H
+# define WHATEVER_H
 
-int main(){
-	Base *p;
+#include <iostream>
+#include <iomanip>
+#include <string>
 
-	p = generate();
-
-	identify(p);
-	identify(&(*p));
-	//delete p;
+template<typename T>
+void	swap(T &x, T &y ){
+	T z = x;
+	x = y;
+	y = z;
 }
+
+template<typename T>
+T min(T const &x, T const &y){
+	if (x < y)
+		return x;
+	else 
+		return y;
+}
+
+template<typename T>
+T max(T const &x, T const &y){
+	if (x > y)
+		return x;
+	else
+		return y;
+}
+
+#endif

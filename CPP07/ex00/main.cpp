@@ -5,19 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 14:25:59 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/10 19:54:11 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/11 13:52:40 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/11 13:53:11 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.h"
+#include "whatever.h"
 
-int main(){
-	Base *p;
-
-	p = generate();
-
-	identify(p);
-	identify(&(*p));
-	//delete p;
-}
+int main( void ) { 
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+return 0; }

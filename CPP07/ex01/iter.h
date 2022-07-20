@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzi <ramzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 14:25:59 by ramzi             #+#    #+#             */
-/*   Updated: 2022/07/10 19:54:11 by ramzi            ###   ########.fr       */
+/*   Created: 2022/07/11 17:34:12 by ramzi             #+#    #+#             */
+/*   Updated: 2022/07/12 15:54:37 by ramzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.h"
+#ifndef ITER_H
+# define ITER_H
 
-int main(){
-	Base *p;
+#include <iostream>
 
-	p = generate();
-
-	identify(p);
-	identify(&(*p));
-	//delete p;
+template<typename T>
+void	iter(T *address, size_t size, void (*f)(T const &smt)){
+	for (size_t i = 0; i < size; i++){
+		f(address[i]);
+	}
 }
+
+template<typename T>
+void display(T const &smt){
+	std::cout << smt << std::endl;
+}
+
+#endif
